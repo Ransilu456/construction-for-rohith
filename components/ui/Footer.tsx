@@ -1,0 +1,80 @@
+import Link from "next/link";
+import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+
+export default function Footer() {
+    return (
+        <footer className="bg-background pt-24 pb-12 border-t border-border">
+            <div className="max-w-[1400px] mx-auto px-6">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 mb-20 text-foreground">
+                    <div className="md:col-span-1">
+                        <Link href="/" className="flex items-center gap-4 mb-8 group">
+                            <div className="flex items-center justify-center font-heading font-light text-xl tracking-widest text-primary border border-primary/20 w-12 h-12 rounded-full">
+                                MHC
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="font-heading font-medium text-lg tracking-wide uppercase text-foreground">Modern House</span>
+                                <span className="text-[10px] font-medium tracking-[0.2em] text-primary uppercase">Construction</span>
+                            </div>
+                        </Link>
+                        <p className="text-foreground/70 text-sm leading-relaxed max-w-xs mb-8 font-light">
+                            Leading the evolution of tropical modern architecture in Sri Lanka. Crafting spaces that breathe with the landscape.
+                        </p>
+                        <div className="flex gap-4 text-primary">
+                            <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"><Instagram size={16} /></a>
+                            <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"><Facebook size={16} /></a>
+                            <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"><Linkedin size={16} /></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 className="font-heading font-semibold mb-6 text-sm tracking-widest uppercase text-foreground">Studio</h4>
+                        <ul className="space-y-4 text-sm text-foreground/70 font-light">
+                            <li><Link href="/about" className="hover:text-primary transition-colors">Philosophy</Link></li>
+                            <li><Link href="/designs" className="hover:text-primary transition-colors">Portfolio</Link></li>
+                            <li><Link href="/gallery" className="hover:text-primary transition-colors">Journal & Media</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-heading font-semibold mb-6 text-sm tracking-widest uppercase text-foreground">Expertise</h4>
+                        <ul className="space-y-4 text-sm text-foreground/70 font-light">
+                            <li><Link href="/services#design" className="hover:text-primary transition-colors">Architectural Design</Link></li>
+                            <li><Link href="/services#construction" className="hover:text-primary transition-colors">Turnkey Construction</Link></li>
+                            <li><Link href="/services#renovation" className="hover:text-primary transition-colors">Heritage Restorations</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">Request a Consultation</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-heading font-semibold mb-6 text-sm tracking-widest uppercase text-foreground">Inquiries</h4>
+                        <ul className="space-y-5 text-sm text-foreground/80 font-light">
+                            <li className="flex items-start gap-4">
+                                <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
+                                <span>45/2 Barnes Place,<br />Colombo 07, Sri Lanka</span>
+                            </li>
+                            <li className="flex items-center gap-4">
+                                <Phone size={18} className="text-primary shrink-0" />
+                                <span className="tracking-wide">+94 11 234 5678</span>
+                            </li>
+                            <li className="flex items-center gap-4">
+                                <Mail size={18} className="text-primary shrink-0" />
+                                <span>inquiries@modernhouse.lk</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-foreground/50 text-xs font-light">
+                        &copy; {new Date().getFullYear()} Modern House Construction (PVT) LTD. All rights reserved.
+                    </p>
+                    <div className="flex gap-6 text-xs text-foreground/50 font-light">
+                        <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                        <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}

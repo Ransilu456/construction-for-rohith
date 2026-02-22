@@ -1,65 +1,154 @@
+import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, Leaf, Shield, Sun } from "lucide-react";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import DesignCard from "@/components/ui/DesignCard";
+import { HouseDesign } from "@/types";
+import designsData from "@/data/designs.json";
 
 export default function Home() {
+  const featuredDesigns = (designsData as HouseDesign[]).slice(0, 2);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
+      <Navbar />
+
+      {/* Elegant Hero Section */}
+      <section className="relative h-screen min-h-[700px] w-full flex items-end pb-24 lg:pb-32 px-6">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Modern Tropical Villa in Sri Lanka"
+            className="w-full h-full object-cover"
+            fill
+            priority
+          />
+          {/* Subtle gradient overlay instead of heavy black box */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start text-white">
+          <span className="text-secondary/90 tracking-[0.2em] uppercase text-sm font-medium mb-6 flex items-center gap-4">
+            <span className="w-12 h-px bg-secondary/80"></span>
+            Modern House Construction
+          </span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-light tracking-tight leading-[1.05] mb-8 max-w-4xl text-shadow-sm">
+            Architecture that <br /> breathes.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-white/80 font-light max-w-2xl mb-12 leading-relaxed">
+            Crafting elegant, climate-responsive tropical homes across Sri Lanka. Blending the legacy of Geoffrey Bawa with contemporary luxury.
           </p>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <Link
+              href="/designs"
+              className="px-8 py-4 bg-white text-foreground hover:bg-white/90 font-medium tracking-wide transition-all rounded-sm flex items-center justify-center gap-2 group shadow-lg"
+            >
+              Explore Portfolio
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+            </Link>
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-transparent border border-white/40 text-white hover:bg-white/10 font-medium tracking-wide transition-all rounded-sm flex items-center justify-center backdrop-blur-sm"
+            >
+              Request Consultation
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Intro / Philosophy - High whitespace, airy look */}
+      <section className="py-32 max-w-5xl mx-auto px-6 text-center w-full">
+        <span className="text-accent tracking-widest uppercase text-xs font-semibold mb-6 block">Our Philosophy</span>
+        <h2 className="text-3xl md:text-5xl font-heading font-light text-foreground leading-[1.2] mb-10">
+          “To build in the tropics is to create a seamless transition between the shelter and the landscape.”
+        </h2>
+        <p className="text-foreground/70 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light">
+          We move away from enclosed, heavily air-conditioned concrete boxes. Our homes feature deep overhangs, internal courtyards, and natural material palettes that age beautifully over time in the Sri Lankan climate.
+        </p>
+      </section>
+
+      {/* Elegant Trust Indicators */}
+      <section className="py-24 bg-secondary/30 relative border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="grid md:grid-cols-3 gap-16 lg:gap-24">
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-full bg-secondary text-primary flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                <Leaf className="font-light" size={26} />
+              </div>
+              <h3 className="text-xl font-heading font-medium text-foreground mb-4">Passive Cooling</h3>
+              <p className="text-foreground/70 font-light leading-relaxed">
+                Strategically placed courtyards and louvered windows channel natural breezes, dramatically reducing the need for mechanical cooling.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-full bg-secondary text-primary flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                <Sun className="font-light" size={26} />
+              </div>
+              <h3 className="text-xl font-heading font-medium text-foreground mb-4">Natural Light Integration</h3>
+              <p className="text-foreground/70 font-light leading-relaxed">
+                Large sliding glass doors and skylights ensure every room is bathed in diffused, glare-free tropical sunlight throughout the day.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-16 h-16 rounded-full bg-secondary text-primary flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                <Shield className="font-light" size={26} />
+              </div>
+              <h3 className="text-xl font-heading font-medium text-foreground mb-4">Turnkey Build Quality</h3>
+              <p className="text-foreground/70 font-light leading-relaxed">
+                From foundation to custom teak joinery, our in-house construction teams execute our architectural designs with uncompromised precision.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Featured Designs - Elegant Grid */}
+      <section className="py-32 max-w-7xl mx-auto px-6 w-full">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <span className="text-accent tracking-widest uppercase text-xs font-semibold mb-4 block">Signature Series</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-light text-foreground">Featured Masterpieces</h2>
+          </div>
+          <Link href="/designs" className="group flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors pb-2 border-b border-primary/30">
+            View All Designs
+            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
+          {featuredDesigns.map(design => (
+            <DesignCard key={design.slug} design={design} />
+          ))}
+        </div>
+      </section>
+
+      {/* Clean Call to Action */}
+      <section className="relative py-32 bg-primary text-white overflow-hidden">
+        {/* Subtle decorative background element */}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-current">
+            <polygon points="100,0 0,100 100,100" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-heading font-light mb-8">Begin Your Journey</h2>
+          <p className="text-xl text-white/80 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+            Schedule a private consultation with our principal architects to conceptualize your sanctuary.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-10 py-5 bg-background text-foreground hover:bg-secondary font-medium tracking-wide transition-all rounded-sm shadow-xl hover:-translate-y-1"
+          >
+            Schedule a Consultation
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
   );
 }
