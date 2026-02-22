@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "name": "Arjuna Bandara",
+        "email": "arjuna.b@gmail.com",
+        "phone": "077 123 4567",
+        "interest": "new_build",
+        "message": "Looking to build a 3-bedroom villa in Chilaw area with an internal courtyard and high ceilings. Interested in a site visit.",
+        "date": "2026-02-22T09:15:00Z",
+        "status": "new"
+    },
+    {
+        "id": "2",
+        "name": "Sajith Perera",
+        "email": "sajith.perera@hotmail.com",
+        "phone": "071 987 6543",
+        "interest": "renovation",
+        "message": "We have an old colonial house in Negombo that needs a complete structural renovation with modern tropical interiors.",
+        "date": "2026-02-22T08:30:00Z",
+        "status": "responded"
+    },
+    {
+        "id": "3",
+        "name": "Nilani Silva",
+        "email": "nilani.s@icloud.com",
+        "phone": "077 444 8888",
+        "interest": "design_only",
+        "message": "I am interested in architectural drawings for a compact luxury home. No construction required at this stage.",
+        "date": "2026-02-21T14:20:00Z",
+        "status": "seen"
+    },
+    {
+        "id": "4",
+        "name": "Kamal Gunaratne",
+        "email": "kamal.g@lanka.biz",
+        "phone": "072 555 1111",
+        "interest": "new_build",
+        "message": "Planning a boutique hotel project in Galle. Need experts in tropical modern architecture.",
+        "date": "2026-02-20T10:05:00Z",
+        "status": "new"
+    },
+    {
+        "id": "5",
+        "name": "Prasanna Wickramasinghe",
+        "email": "prasanna.w@outlook.com",
+        "phone": "077 222 3333",
+        "interest": "other",
+        "message": "Inquiry regarding land acquisition assistance in the North Western province alongside construction.",
+        "date": "2026-02-19T16:45:00Z",
+        "status": "seen"
+    }
+]

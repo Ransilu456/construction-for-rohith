@@ -8,7 +8,8 @@ import { HouseDesign } from "@/types";
 import designsData from "@/data/designs.json";
 
 export default function Home() {
-  const featuredDesigns = (designsData as HouseDesign[]).slice(0, 4);
+  // Increase to 6 designs to show off the scrolling
+  const featuredDesigns = (designsData as HouseDesign[]).slice(0, 6);
 
   return (
     <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
@@ -37,7 +38,7 @@ export default function Home() {
             Architecture that <br /> breathes.
           </h1>
           <p className="text-lg md:text-xl text-white/80 font-light max-w-2xl mb-12 leading-relaxed">
-            Crafting elegant, climate-responsive tropical homes across Sri Lanka. Blending the legacy of Geoffrey Bawa with contemporary luxury.
+            Experienced and reliable construction company specializing in residential and commercial projects
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
             <Link
@@ -106,25 +107,69 @@ export default function Home() {
       </section>
 
       {/* Featured Designs - Elegant Grid */}
-      <section className="py-32 bg-secondary/10 w-full border-t border-border">
+      <section className="py-24 bg-secondary/10 w-full border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <span className="text-accent tracking-widest uppercase text-xs font-semibold mb-4 block">Signature Series</span>
-              <h2 className="text-4xl md:text-5xl font-heading font-light text-foreground">Featured Masterpieces</h2>
+              <h2 className="text-4xl md:text-5xl font-heading font-light text-primary">Featured Masterpieces</h2>
             </div>
-            <Link href="/designs" className="group flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors pb-2 border-b border-primary/30">
+            <Link href="/designs" className="group flex items-center gap-2 text-primary font-medium hover:text-accent transition-colors pb-2 border-b border-primary/30">
               Explore Our Full Portfolio
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-            {featuredDesigns.map((design, idx) => (
-              <div key={design.slug} className={idx % 2 === 1 ? "md:mt-16" : ""}>
-                <DesignCard design={design} />
+          <div className="relative h-[600px] overflow-y-auto pr-2 scrollbar-thin">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredDesigns.map((design) => (
+                <div key={design.slug}>
+                  <DesignCard design={design} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Sri Lankan Style */}
+      <section className="py-24 bg-background w-full border-t border-border/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-accent tracking-widest uppercase text-xs font-semibold mb-4 block">Client Voices</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-primary leading-[1.2]">
+              Stories from our homeowners.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="p-8 md:p-10 border border-border bg-card shadow-sm relative group hover:border-primary/30 transition-colors">
+              <div className="absolute top-6 right-8 text-secondary/40 font-heading text-8xl leading-none select-none group-hover:text-secondary/70 transition-colors">&quot;</div>
+              <p className="text-foreground/80 font-light leading-relaxed mb-8 relative z-10 italic text-lg">
+                &quot;The way our home catches the evening breeze is nothing short of magical. We barely use air conditioning, and the seamless flow from our living room into the courtyard makes the space feel infinite.&quot;
+              </p>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-primary font-heading font-medium text-lg">S</div>
+                <div>
+                  <h4 className="font-heading font-medium text-primary text-lg">Sahan & Dilini</h4>
+                  <span className="text-xs text-accent uppercase tracking-wider font-semibold">Colombo 07</span>
+                </div>
               </div>
-            ))}
+            </div>
+
+            <div className="p-8 md:p-10 border border-border bg-card shadow-sm relative group hover:border-primary/30 transition-colors">
+              <div className="absolute top-6 right-8 text-secondary/40 font-heading text-8xl leading-none select-none group-hover:text-secondary/70 transition-colors">&quot;</div>
+              <p className="text-foreground/80 font-light leading-relaxed mb-8 relative z-10 italic text-lg">
+                &quot;Every corner of our villa feels grounded in the landscape. The use of local timber and natural stone gives it a warmth that modern glass-and-steel houses completely lack. It&apos;s a true sanctuary.&quot;
+              </p>
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-primary font-heading font-medium text-lg">A</div>
+                <div>
+                  <h4 className="font-heading font-medium text-primary text-lg">Amesh Perera</h4>
+                  <span className="text-xs text-accent uppercase tracking-wider font-semibold">Kandy</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -145,7 +190,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-10 py-5 bg-background text-foreground hover:bg-secondary font-medium tracking-wide transition-all rounded-sm shadow-xl hover:-translate-y-1"
+            className="inline-flex items-center justify-center px-10 py-5 bg-background text-primary hover:bg-secondary font-medium tracking-wide transition-all rounded-none shadow-xl hover:-translate-y-1"
           >
             Schedule a Consultation
           </Link>

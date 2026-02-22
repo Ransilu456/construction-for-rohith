@@ -19,14 +19,14 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const textColor = isScrolled || !isHomePage ? "text-foreground" : "text-white";
-    const linkColor = isScrolled || !isHomePage ? "text-foreground/80 hover:text-primary" : "text-white/90 hover:text-white";
+    const textColor = isScrolled || !isHomePage ? "text-primary" : "text-white";
+    const linkColor = isScrolled || !isHomePage ? "text-primary/70 hover:text-accent" : "text-white/90 hover:text-white";
 
     return (
         <nav
             className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled || !isHomePage
-                    ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border/50 py-4"
-                    : "bg-transparent py-6"
+                ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border/50 py-4"
+                : "bg-transparent py-6"
                 }`}
         >
             <div className="max-w-[1400px] mx-auto px-6">
@@ -46,11 +46,12 @@ export default function Navbar() {
                         <Link href="/about" className={`text-sm font-medium tracking-wide transition-colors ${linkColor}`}>Philosophy</Link>
                         <Link href="/services" className={`text-sm font-medium tracking-wide transition-colors ${linkColor}`}>Services</Link>
                         <Link href="/designs" className={`text-sm font-medium tracking-wide transition-colors ${linkColor}`}>Portfolio</Link>
+                        <Link href="/testimonials" className={`text-sm font-medium tracking-wide transition-colors ${linkColor}`}>Voices</Link>
                         <Link href="/gallery" className={`text-sm font-medium tracking-wide transition-colors ${linkColor}`}>Journal</Link>
                     </div>
 
                     <div className="hidden lg:flex">
-                        <Link href="/contact" className="px-6 py-2.5 bg-primary text-white hover:bg-primary/90 rounded-sm font-medium tracking-wider text-sm transition-all shadow-sm">
+                        <Link href="/contact" className="px-6 py-2.5 border border-primary text-primary hover:bg-primary hover:text-white rounded-none font-medium tracking-wider text-sm transition-all">
                             Inquire
                         </Link>
                     </div>
@@ -70,9 +71,10 @@ export default function Navbar() {
                         <Link href="/about" className="text-xl font-heading text-foreground" onClick={() => setIsMobileMenuOpen(false)}>Philosophy</Link>
                         <Link href="/services" className="text-xl font-heading text-foreground" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
                         <Link href="/designs" className="text-xl font-heading text-foreground" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
+                        <Link href="/testimonials" className="text-xl font-heading text-foreground" onClick={() => setIsMobileMenuOpen(false)}>Voices</Link>
                         <Link href="/gallery" className="text-xl font-heading text-foreground" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
                         <div className="pt-6 border-t border-border">
-                            <Link href="/contact" className="inline-block px-8 py-4 bg-primary text-white font-medium tracking-widest uppercase text-sm rounded-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Link href="/contact" className="inline-block px-8 py-4 border border-primary text-primary hover:bg-primary hover:text-white transition-colors font-medium tracking-widest uppercase text-sm rounded-none" onClick={() => setIsMobileMenuOpen(false)}>
                                 Submit Inquiry
                             </Link>
                         </div>

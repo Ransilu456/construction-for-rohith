@@ -17,7 +17,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-foreground/70 text-sm leading-relaxed max-w-xs mb-8 font-light">
-                            Leading the evolution of tropical modern architecture in Sri Lanka. Crafting spaces that breathe with the landscape.
+                            Experienced and reliable construction company specializing in residential and commercial projects
                         </p>
                         <div className="flex gap-4 text-primary">
                             <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"><Instagram size={16} /></a>
@@ -31,6 +31,7 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm text-foreground/70 font-light">
                             <li><Link href="/about" className="hover:text-primary transition-colors">Philosophy</Link></li>
                             <li><Link href="/designs" className="hover:text-primary transition-colors">Portfolio</Link></li>
+                            <li><Link href="/testimonials" className="hover:text-primary transition-colors">Client Voices</Link></li>
                             <li><Link href="/gallery" className="hover:text-primary transition-colors">Journal & Media</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
                         </ul>
@@ -51,11 +52,11 @@ export default function Footer() {
                         <ul className="space-y-5 text-sm text-foreground/80 font-light">
                             <li className="flex items-start gap-4">
                                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                                <span>45/2 Barnes Place,<br />Colombo 07, Sri Lanka</span>
+                                <span>Puttalam Road,<br />Chilaw</span>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Phone size={18} className="text-primary shrink-0" />
-                                <span className="tracking-wide">+94 11 234 5678</span>
+                                <span className="tracking-wide">077 8682 720<br />07777 88 600</span>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Mail size={18} className="text-primary shrink-0" />

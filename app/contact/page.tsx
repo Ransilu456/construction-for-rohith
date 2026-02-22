@@ -41,8 +41,8 @@ export default function ContactPage() {
 
                             <div className="space-y-3">
                                 <label className="text-xs uppercase tracking-widest text-foreground/60 font-semibold" htmlFor="interest">Area of Interest</label>
-                                <select id="interest" className="w-full bg-transparent border-b border-border py-3 text-foreground focus:outline-none focus:border-primary transition-colors font-light appearance-none">
-                                    <option value="" disabled selected className="text-foreground/30">Select an option</option>
+                                <select id="interest" defaultValue="" className="w-full bg-transparent border-b border-border py-3 text-foreground focus:outline-none focus:border-primary transition-colors font-light appearance-none">
+                                    <option value="" disabled className="text-foreground/30">Select an option</option>
                                     <option value="new_build">New Construction</option>
                                     <option value="renovation">Heritage Renovation</option>
                                     <option value="design_only">Architectural Design Phase</option>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                         <div>
                             <h2 className="text-3xl font-heading font-light text-foreground mb-8">Studio Headquarters</h2>
                             <p className="text-foreground/70 font-light leading-relaxed mb-10">
-                                Our architectural studio is located in the heart of Colombo 07. Meetings are by strict appointment only to ensure dedicated creative focus for our clients.
+                                Our architectural studio is located in the heart of Chilaw. Meetings are by strict appointment only to ensure dedicated creative focus for our clients.
                             </p>
 
                             <div className="space-y-8">
@@ -76,7 +76,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h4 className="font-heading text-lg text-foreground mb-2">Location</h4>
-                                        <p className="text-foreground/70 font-light leading-relaxed">45/2 Barnes Place,<br />Colombo 07, Sri Lanka</p>
+                                        <p className="text-foreground/70 font-light leading-relaxed">Puttalam Road,<br />Chilaw</p>
                                     </div>
                                 </div>
 
@@ -86,7 +86,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h4 className="font-heading text-lg text-foreground mb-2">Direct Lines</h4>
-                                        <p className="text-foreground/70 font-light leading-relaxed">+94 11 234 5678<br />+94 77 987 6543</p>
+                                        <p className="text-foreground/70 font-light leading-relaxed">077 8682 720<br />07777 88 600</p>
                                     </div>
                                 </div>
 
