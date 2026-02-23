@@ -21,7 +21,7 @@ export default function AboutPage() {
 
                 <div className="relative aspect-video lg:aspect-[21/9] w-full mt-10 overflow-hidden shadow-sm">
                     <Image
-                        src="https://images.unsplash.com/photo-1628012198051-b0e6fc31e9c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                        src="https://images.unsplash.com/photo-1503387762-592dea58ef21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
                         alt="Architectural Sketch and Model"
                         fill
                         className="object-cover"

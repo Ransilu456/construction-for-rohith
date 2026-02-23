@@ -1,4 +1,6 @@
-[
+import { HouseDesign } from "@/types";
+
+export const designsData: HouseDesign[] = [
     {
         "slug": "the-cinnamon-courtyard",
         "title": "The Cinnamon Courtyard",
@@ -95,4 +97,4 @@
         "architect": "MHC Design Studio",
         "timeline": "14 Months"
     }
-]
+];

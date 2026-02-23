@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import designsData from "@/data/designs.json";
-import { HouseDesign } from "@/types";
+import { designsData } from "@/data/designs";
 
 export default function GalleryPage() {
-    const allImages = (designsData as HouseDesign[]).flatMap(d => d.images);
+    const allImages = designsData.flatMap(d => d.images);
 
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">

@@ -20,16 +20,16 @@ export default function Navbar() {
     }, []);
 
     const textColor = isScrolled || !isHomePage ? "text-primary" : "text-white";
-    const linkColor = isScrolled || !isHomePage ? "text-primary/70 hover:text-accent" : "text-white/90 hover:text-white";
+    const linkColor = isScrolled || !isHomePage ? "text-primary/70 hover:text-accent" : "text-white/90 hover:text-accent";
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled || !isHomePage
-                ? "bg-background/90 backdrop-blur-md shadow-sm border-b border-border/50 py-4"
-                : "bg-transparent py-6"
+            className={`fixed top-0 w-full z-50 transition-all duration-500 border-0 ${isScrolled || !isHomePage
+                ? "bg-background/90 backdrop-blur-md shadow-sm py-4 border-0"
+                : "bg-transparent py-6 border-0"
                 }`}
         >
-            <div className="max-w-[1400px] mx-auto px-6">
+            <div className="max-w-350 mx-auto px-6">
                 <div className="flex justify-between items-center">
 
                     <Link href="/" className="flex items-center gap-4 group">

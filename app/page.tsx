@@ -5,18 +5,18 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import DesignCard from "@/components/ui/DesignCard";
 import { HouseDesign } from "@/types";
-import designsData from "@/data/designs.json";
+import { designsData } from "@/data/designs";
 
 export default function Home() {
   // Increase to 6 designs to show off the scrolling
-  const featuredDesigns = (designsData as HouseDesign[]).slice(0, 6);
+  const featuredDesigns = designsData.slice(0, 6);
 
   return (
     <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
       <Navbar />
 
       {/* Elegant Hero Section */}
-      <section className="relative h-screen min-h-[700px] w-full flex items-end pb-24 lg:pb-32 px-6">
+      <section className="relative h-screen min-h-175 w-full flex items-end pb-24 lg:pb-32 px-6">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
@@ -26,7 +26,7 @@ export default function Home() {
             priority
           />
           {/* Subtle gradient overlay instead of heavy black box */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start text-white">
@@ -120,7 +120,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="relative h-[600px] overflow-y-auto pr-2 scrollbar-thin">
+          <div className="relative h-150 overflow-y-auto pr-2 scrollbar-thin">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredDesigns.map((design) => (
                 <div key={design.slug}>
