@@ -18,14 +18,14 @@ export default function ServicesPage() {
             icon: <HardHat size={36} className="text-primary mb-6 stroke-1" />,
             title: "Turnkey Construction",
             desc: "We offer a seamless build experience. Our in-house teams of engineers, masons, and carpenters execute the architectural vision with uncompromising precision. You receive a fully completed home, ready to move in.",
-            img: "https://images.unsplash.com/photo-1541888086925-eb49b1ca2d03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         },
         {
             id: "renovation",
             icon: <Hammer size={36} className="text-primary mb-6 stroke-1" />,
             title: "Heritage Restoration",
             desc: "Breathing new life into old Walawwas and colonial bungalows. We carefully restore historical architectural elements while discreetly integrating modern plumbing, electrical, and cooling systems.",
-            img: "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
         },
         {
             id: "interiors",

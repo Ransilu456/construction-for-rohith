@@ -120,13 +120,15 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="relative h-150 overflow-y-auto pr-2 scrollbar-thin">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="relative -mx-6 px-6 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar">
+            <div className="flex gap-8">
               {featuredDesigns.map((design) => (
-                <div key={design.slug}>
+                <div key={design.slug} className="flex-none w-[85vw] md:w-[400px] lg:w-[450px] snap-start">
                   <DesignCard design={design} />
                 </div>
               ))}
+              {/* Spacer for right padding in horizontal scroll */}
+              <div className="flex-none w-px h-full"></div>
             </div>
           </div>
         </div>
