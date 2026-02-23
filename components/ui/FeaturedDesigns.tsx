@@ -23,12 +23,12 @@ export default function FeaturedDesigns() {
     return (
         <section className="py-24 bg-secondary/10 w-full border-t border-border">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
                     <div>
                         <span className="text-accent tracking-widest uppercase text-xs font-semibold mb-4 block">Signature Series</span>
                         <h2 className="text-4xl md:text-5xl font-heading font-light text-primary">Featured Masterpieces</h2>
                     </div>
-                    <div className="flex flex-col items-end gap-6">
+                    <div className="flex flex-col items-start md:items-end gap-6 w-full md:w-auto">
                         <Link href="/designs" className="group flex items-center gap-2 text-primary font-medium hover:text-accent transition-colors pb-2 border-b border-primary/30">
                             Explore Our Full Portfolio
                             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
@@ -59,7 +59,7 @@ export default function FeaturedDesigns() {
                 >
                     <div className="flex gap-8">
                         {featuredDesigns.map((design) => (
-                            <div key={design.slug} className="flex-none w-[85vw] md:w-[400px] lg:w-[450px] snap-start">
+                            <div key={design.slug} className="flex-none w-[280px] sm:w-[350px] md:w-[400px] lg:w-[450px] snap-start">
                                 <DesignCard design={design} />
                             </div>
                         ))}
