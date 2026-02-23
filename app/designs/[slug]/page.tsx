@@ -4,12 +4,25 @@ import { BedDouble, Bath, Square, Calendar, User, MapPin, ArrowLeft, CheckCircle
 import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import designsData from "@/data/designs.json";
-import { HouseDesign } from "@/types";
+import { designsData } from "@/data/designs";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const design = (designsData).find(d => d.slug === slug);
+
+    if (!design) {
+        notFound();
+    }
+
+    return {
+        title: `${design.title} - House Design`,
+        description: design.description,
+    };
+}
 
 export default async function DesignDetail({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const design = (designsData as HouseDesign[]).find(d => d.slug === slug);
+    const design = (designsData).find(d => d.slug === slug);
 
     if (!design) {
         notFound();
