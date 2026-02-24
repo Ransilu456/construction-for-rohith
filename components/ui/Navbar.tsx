@@ -31,6 +31,7 @@ export default function Navbar() {
 
     const textColor = isScrolled || !isHomePage ? "text-primary" : "text-white";
     const linkColor = isScrolled || !isHomePage ? "text-primary/70 hover:text-accent" : "text-white/80 hover:text-accent";
+    const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
 
     return (
         <>
@@ -84,22 +85,43 @@ export default function Navbar() {
                                 { name: "Portfolio", href: "/designs" },
                                 { name: "Voices", href: "/testimonials" },
                                 { name: "Journal", href: "/gallery" },
-                            ].map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    className={`group relative text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${linkColor}`}
-                                >
-                                    <span className="relative z-10">{item.name}</span>
-                                    <motion.span
-                                        className="absolute bottom-[-4px] left-0 w-full h-[1px] bg-accent origin-left"
-                                        initial={{ scaleX: 0 }}
-                                        whileHover={{ scaleX: 1 }}
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                    />
-                                </Link>
-                            ))}
+                            ].map((item) => {
+                                const active = isActive(item.href);
+                                return (
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        className={`group relative inline-flex flex-col items-center gap-0 text-xs font-semibold uppercase tracking-[0.2em]
+                                            transition-all duration-300 hover:tracking-[0.26em]
+                                            ${active
+                                                ? (isScrolled || !isHomePage ? "text-accent" : "text-white")
+                                                : (isScrolled || !isHomePage ? "text-primary/70 hover:text-accent" : "text-white/80 hover:text-white")
+                                            }`}
+                                    >
+                                        {/* Label */}
+                                        <span>{item.name}</span>
+
+                                        {/* Underline bar — CSS group-hover, enters from left, exits right */}
+                                        <span
+                                            className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0
+                                                transition-transform duration-300 ease-out
+                                                group-hover:scale-x-100
+                                                ${active ? "!scale-x-100 bg-accent" : "bg-accent"}`}
+                                        />
+
+                                        {/* Active dot */}
+                                        {active && (
+                                            <motion.span
+                                                layoutId="navActiveDot"
+                                                className="absolute -bottom-[11px] left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-accent"
+                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
+                                    </Link>
+                                );
+                            })}
                         </div>
+
 
                         <div className="hidden lg:flex">
                             <Link
@@ -146,30 +168,57 @@ export default function Navbar() {
                                 </button>
                             </div>
 
-                            <div className="flex flex-col px-6 py-10 gap-6">
+                            <div className="flex flex-col px-6 py-10 gap-2">
                                 {[
                                     { name: "Philosophy", href: "/about" },
                                     { name: "Services", href: "/services" },
                                     { name: "Portfolio", href: "/designs" },
                                     { name: "Voices", href: "/testimonials" },
                                     { name: "Journal", href: "/gallery" },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={item.name}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.1 + i * 0.1, duration: 0.5, ease: "easeOut" }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <Link
-                                            href={item.href}
-                                            className="text-4xl md:text-6xl font-heading font-light tracking-tight text-foreground hover:text-accent transition-all duration-300 block"
-                                            onClick={() => setIsMobileMenuOpen(false)}
+                                ].map((item, i) => {
+                                    const active = isActive(item.href);
+                                    return (
+                                        <motion.div
+                                            key={item.name}
+                                            initial={{ opacity: 0, x: -28 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.08 + i * 0.09, duration: 0.45, ease: "easeOut" }}
+                                            whileTap={{ scale: 0.97 }}
                                         >
-                                            {item.name}
-                                        </Link>
-                                    </motion.div>
-                                ))}
+                                            <Link
+                                                href={item.href}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                className={`group flex items-center gap-5 py-4 pl-4 border-l-2 transition-all duration-300
+                                                    ${active
+                                                        ? "border-accent text-accent pl-6"
+                                                        : "border-transparent text-foreground/80 hover:text-accent hover:border-accent hover:pl-6"
+                                                    }`}
+                                            >
+                                                {/* Step number */}
+                                                <span className={`text-[11px] font-mono font-bold tracking-widest transition-colors duration-300 shrink-0
+                                                    ${active ? "text-accent" : "text-foreground/30 group-hover:text-accent/60"}`}>
+                                                    0{i + 1}
+                                                </span>
+
+                                                {/* Link name */}
+                                                <span className="text-4xl md:text-5xl font-heading font-light tracking-tight leading-none">
+                                                    {item.name}
+                                                </span>
+
+                                                {/* Active arrow */}
+                                                {active && (
+                                                    <motion.span
+                                                        initial={{ opacity: 0, x: -6 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        className="ml-auto text-accent text-2xl font-light shrink-0"
+                                                    >
+                                                        →
+                                                    </motion.span>
+                                                )}
+                                            </Link>
+                                        </motion.div>
+                                    );
+                                })}
 
                                 <motion.div
                                     initial={{ opacity: 0 }}
