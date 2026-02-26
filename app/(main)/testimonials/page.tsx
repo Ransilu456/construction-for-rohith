@@ -1,64 +1,13 @@
 "use client";
 
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import { MessageSquare, Quote, Star, MapPin, User } from "lucide-react";
 
-const testimonials = [
-    {
-        quote: "The way our home catches the evening breeze is nothing short of magical. We barely use air conditioning, and the seamless flow from our living room into the courtyard makes the space feel infinite.",
-        author: "Sahan & Dilini",
-        location: "Colombo 07",
-        initial: "S",
-        rating: 5,
-        type: "Modern Villa"
-    },
-    {
-        quote: "Every corner of our villa feels grounded in the landscape. The use of local timber and natural stone gives it a warmth that modern glass-and-steel houses completely lack. It's a true sanctuary.",
-        author: "Amesh Perera",
-        location: "Kandy",
-        initial: "A",
-        rating: 5,
-        type: "Hillside Retreat"
-    },
-    {
-        quote: "We were looking for a builder who understood the nuances of tropical living. Randiya Construction delivered a home that is functional, beautiful, and perfectly suited for the Sri Lankan sun.",
-        author: "Ranjit Wijesinghe",
-        location: "Galle",
-        initial: "R",
-        rating: 5,
-        type: "Beachfront Home"
-    },
-    {
-        quote: "Their attention to detail, especially in the wood joinery and stone work, is exceptional. It's rare to find craftsmen who take such pride in their work these days.",
-        author: "Kumari de Silva",
-        location: "Negombo",
-        initial: "K",
-        rating: 5,
-        type: "Heritage Renovation"
-    },
-    {
-        quote: "Working with their architectural team was a breeze. They listened to our needs and created a space that maximizes natural light without the glare. A perfect balance.",
-        author: "Dr. Priyantha",
-        location: "Kurunegala",
-        initial: "P",
-        rating: 5,
-        type: "Eco-Friendly Residence"
-    },
-    {
-        quote: "The construction was completed on time and within the agreed budget. Professional, transparent, and highly skilled team. I highly recommend them for any luxury project.",
-        author: "Mahanama Perera",
-        location: "Chilaw",
-        initial: "M",
-        rating: 5,
-        type: "Commercial Project"
-    }
-];
+import { MessageSquare, Quote, Star, MapPin } from "lucide-react";
+import { testimonials } from "@/data/testimonials";
 
 export default function TestimonialsPage() {
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
-            <Navbar />
+
 
             {/* Header Section */}
             <section className="pt-40 lg:pt-52 pb-24 border-b border-border bg-secondary/10">
@@ -80,28 +29,28 @@ export default function TestimonialsPage() {
                         {testimonials.map((t, idx) => (
                             <div
                                 key={idx}
-                                className="group flex flex-col p-8 md:p-10 bg-white border border-border shadow-sm hover:border-primary/30 transition-all duration-500 relative"
+                                className="group flex flex-col p-8 md:p-10 bg-white border border-border shadow-sm hover:border-primary/30 transition-all duration-500 relative h-full"
                             >
                                 <div className="absolute top-6 right-8 text-secondary/40 font-heading text-8xl leading-none select-none group-hover:text-secondary/70 transition-colors pointer-events-none">
                                     &quot;
                                 </div>
 
                                 <div className="flex gap-1 mb-6">
-                                    {[...Array(t.rating)].map((_, i) => (
+                                    {[...Array(t.stars)].map((_, i) => (
                                         <Star key={i} size={14} className="fill-accent text-accent" />
                                     ))}
                                 </div>
 
                                 <p className="text-foreground/80 font-light leading-relaxed mb-10 text-lg relative z-10 italic flex-grow">
-                                    &quot;{t.quote}&quot;
+                                    &quot;{t.msg}&quot;
                                 </p>
 
                                 <div className="pt-8 border-t border-border/50 flex items-center gap-5 mt-auto relative z-10">
                                     <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-primary font-heading font-medium text-xl shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                                        {t.initial}
+                                        {t.name.charAt(0)}
                                     </div>
                                     <div>
-                                        <h4 className="font-heading font-medium text-primary text-xl mb-1 group-hover:text-accent transition-colors">{t.author}</h4>
+                                        <h4 className="font-heading font-medium text-primary text-xl mb-1 group-hover:text-accent transition-colors">{t.name}</h4>
                                         <div className="flex flex-col gap-1">
                                             <span className="text-[10px] text-accent font-bold uppercase tracking-widest flex items-center gap-1.5">
                                                 <MapPin size={10} /> {t.location}
@@ -116,7 +65,7 @@ export default function TestimonialsPage() {
                 </div>
             </section>
 
-            {/* Trust Banner */}
+
             <section className="py-24 bg-primary text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
                     <Quote size={400} className="text-white fill-current -mr-32 -mt-32" />
@@ -138,7 +87,7 @@ export default function TestimonialsPage() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

@@ -10,7 +10,17 @@ export interface HouseDesign {
     images: string[];
     description: string;
     features: string[];
+    category: 'single-story' | 'two-story' | 'three-story' | 'villas';
     location: string;
     architect: string;
     timeline: string;
+}
+
+
+export interface Testimonial {
+    name: string;
+    location: string;
+    msg: string;
+    type: string;
+    stars?: number;
 }

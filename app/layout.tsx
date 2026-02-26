@@ -13,7 +13,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Modern House Construction | Tropical Architecture",
+  title: "Modern House Construction | Best Architect in Sri Lanka",
   description: "Crafting Tropical Modern Sanctuaries in Sri Lanka. Blending contemporary minimalism with Sri Lankan heritage.",
 };
 

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PenTool, HardHat, Home, Hammer } from "lucide-react";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
 
 export default function ServicesPage() {
+
     const services = [
         {
             id: "design",
@@ -38,7 +37,7 @@ export default function ServicesPage() {
 
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
-            <Navbar />
+
 
             {/* Hero Section */}
             <section className="pt-32 lg:pt-52 pb-16 md:pb-24 max-w-7xl mx-auto px-6 w-full text-center">
@@ -74,7 +73,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

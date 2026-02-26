@@ -11,7 +11,6 @@ export default function DesignCard({ design }: DesignCardProps) {
     return (
         <Link href={`/designs/${design.slug}`} className="group block h-full">
             <div className="flex flex-col h-full bg-card hover:bg-secondary/20 transition-all duration-500 border border-border hover:border-primary/30">
-                {/* Image Container */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                     <Image
                         src={design.images[0]}
@@ -19,12 +18,12 @@ export default function DesignCard({ design }: DesignCardProps) {
                         fill
                         className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                     />
-                    <div className="absolute top-3 right-3 bg-background/90 backdrop-blur-sm px-3 py-1 border border-border">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-primary">{design.style}</span>
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 border border-border shadow-sm">
+                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent">{design.category.replace('-', ' ')}</span>
                     </div>
+
                 </div>
 
-                {/* Content Container */}
                 <div className="p-5 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-2">
                         <h3 className="text-xl font-heading font-medium text-primary group-hover:text-accent transition-colors line-clamp-1">{design.title}</h3>

@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import DesignCard from "./DesignCard";
+import DesignCard from "../ui/DesignCard";
 import { designsData } from "@/data/designs";
 
 export default function FeaturedDesigns() {

@@ -94,3 +94,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.letter-sp:hover{
+  letter-spacing: 5px;
+}

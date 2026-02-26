@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { designsData } from "@/data/designs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://modernhouse.lk'; // Placeholder domain
+    const baseUrl = 'https://modernhouse.lk'; 
 
     const staticPages = [
         '',

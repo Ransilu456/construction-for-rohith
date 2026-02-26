@@ -1,0 +1,341 @@
+<html lang="en" className="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern House Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+</head>
+<body className="bg-[#FCFAF6] text-stone-800 antialiased selection:bg-amber-200/50 selection:text-stone-900 flex flex-col min-h-screen relative overflow-x-hidden" style="font-family: 'Inter', sans-serif;">
+
+    <!-- Background Glow Effect (Warm Tropical Light) -->
+    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-amber-500/10 blur-[120px] -z-10 pointer-events-none"></div>
+    <div className="absolute top-[20%] right-[-10%] w-[30%] h-[30%] rounded-full bg-orange-600/10 blur-[100px] -z-10 pointer-events-none"></div>
+
+    <!-- Floating Navigation -->
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none">
+        <nav className="w-full max-w-5xl bg-[#FCFAF6]/70 backdrop-blur-xl border border-[#E8DFD1]/80 shadow-[0_8px_30px_rgb(162,80,53,0.04)] rounded-full px-6 py-3 flex items-center justify-between pointer-events-auto transition-all duration-300 hover:bg-[#FCFAF6]/90 hover:shadow-[0_8px_30px_rgb(162,80,53,0.08)]">
+            <div className="flex items-center gap-2">
+                <span className="text-lg font-semibold tracking-tighter text-stone-900 uppercase">MHC</span>
+            </div>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-500">
+                <a href="#categories" className="hover:text-[#A25035] transition-colors duration-300">Categories</a>
+                <a href="#trending" className="hover:text-[#A25035] transition-colors duration-300">Trending</a>
+                <a href="#projects" className="hover:text-[#A25035] transition-colors duration-300">Projects</a>
+                <a href="#ideas" className="hover:text-[#A25035] transition-colors duration-300">Ideas</a>
+            </div>
+            <div className="flex items-center gap-4">
+                <button className="hidden sm:block text-sm font-medium text-stone-500 hover:text-stone-900 transition-colors duration-300">Log in</button>
+                <button className="bg-[#A25035] text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-[#8A422B] hover:scale-105 hover:shadow-lg hover:shadow-[#A25035]/20 active:scale-95 transition-all duration-300 flex items-center gap-2 group">
+                    Start Project
+                    <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="text-base group-hover:translate-x-0.5 transition-transform"></iconify-icon>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section className="relative pt-48 pb-24 px-6 text-center max-w-5xl mx-auto flex flex-col items-center justify-center min-h-[85vh]">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F4EFE6]/60 backdrop-blur-md border border-[#E8DFD1]/80 shadow-sm text-xs font-medium text-[#A25035] mb-8 hover:bg-[#F4EFE6]/90 transition-colors cursor-default">
+            <iconify-icon icon="solar:star-linear" style="stroke-width: 1.5;"></iconify-icon>
+            <span>Award-winning tropical modernism</span>
+        </div>
+        <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter text-stone-900 leading-[1.1] mb-8 max-w-4xl">
+            Build your tropical <br className="hidden sm:block"> sanctuary.
+        </h1>
+        <p className="text-lg md:text-xl text-stone-600 mb-12 max-w-2xl mx-auto font-normal leading-relaxed">
+            From minimalist courtyard homes to expansive coastal villas, we engineer spaces that elevate everyday living through natural ventilation, warm materials, and timeless design.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <button className="w-full sm:w-auto bg-[#A25035] text-white text-sm font-medium px-8 py-4 rounded-full hover:bg-[#8A422B] hover:shadow-xl hover:shadow-[#A25035]/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2 group">
+                Explore Designs
+                <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
+            </button>
+            <button className="w-full sm:w-auto bg-white/80 backdrop-blur-md text-stone-900 border border-[#E8DFD1]/80 shadow-sm text-sm font-medium px-8 py-4 rounded-full hover:bg-white hover:border-stone-300 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300">
+                View Portfolio
+            </button>
+        </div>
+    </section>
+
+    <!-- Image Break -->
+    <div className="px-4 sm:px-6 max-w-[90rem] mx-auto mb-32 relative group">
+        <div className="absolute inset-0 bg-[#A25035]/5 rounded-[2.5rem] mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+        <img src="https://images.unsplash.com/photo-1613490908575-b6d396cd8423?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2400&amp;q=80" alt="Tropical Modern House Exterior" className="w-full aspect-[21/9] object-cover rounded-[2.5rem] bg-[#F4EFE6] shadow-[0_20px_40px_rgb(162,80,53,0.06)] transform group-hover:scale-[1.01] transition-transform duration-700 ease-out">
+    </div>
+
+    <!-- House Categories -->
+    <section id="categories" className="py-24 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+            <div className="mb-16 max-w-2xl">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 mb-6">House Categories</h2>
+                <p className="text-base text-stone-600 font-normal leading-relaxed">Discover our core architectural frameworks, tailored to fit varying lifestyles, lot sizes, and aesthetic preferences.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[2rem] border border-[#E8DFD1]/80 shadow-sm hover:shadow-xl hover:shadow-[#A25035]/10 hover:-translate-y-1 hover:border-amber-200/80 transition-all duration-500 cursor-pointer flex flex-col h-full relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100/50 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-orange-200/40"></div>
+                    <div className="w-14 h-14 rounded-2xl bg-white border border-[#F4EFE6] shadow-sm flex items-center justify-center text-[#A25035] mb-8 group-hover:scale-110 group-hover:shadow-md transition-all duration-500 relative z-10">
+                        <iconify-icon icon="solar:home-angle-linear" style="stroke-width: 1.5;" className="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 className="text-xl font-semibold tracking-tight text-stone-900 mb-3 relative z-10">Single Story</h3>
+                    <p className="text-sm text-stone-500 font-normal flex-grow mb-8 leading-relaxed relative z-10">Seamless indoor-outdoor flow, optimized for accessibility and open-plan living with internal courtyards.</p>
+                    <div className="flex items-center text-sm font-medium text-stone-900 group-hover:text-[#A25035] transition-colors relative z-10">
+                        View layouts <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[2rem] border border-[#E8DFD1]/80 shadow-sm hover:shadow-xl hover:shadow-[#A25035]/10 hover:-translate-y-1 hover:border-amber-200/80 transition-all duration-500 cursor-pointer flex flex-col h-full relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100/50 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-orange-200/40"></div>
+                    <div className="w-14 h-14 rounded-2xl bg-white border border-[#F4EFE6] shadow-sm flex items-center justify-center text-[#A25035] mb-8 group-hover:scale-110 group-hover:shadow-md transition-all duration-500 relative z-10">
+                        <iconify-icon icon="solar:buildings-2-linear" style="stroke-width: 1.5;" className="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 className="text-xl font-semibold tracking-tight text-stone-900 mb-3 relative z-10">Two Story</h3>
+                    <p className="text-sm text-stone-500 font-normal flex-grow mb-8 leading-relaxed relative z-10">Maximized square footage with distinct separation between living areas and breezy sleeping quarters.</p>
+                    <div className="flex items-center text-sm font-medium text-stone-900 group-hover:text-[#A25035] transition-colors relative z-10">
+                        View layouts <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[2rem] border border-[#E8DFD1]/80 shadow-sm hover:shadow-xl hover:shadow-[#A25035]/10 hover:-translate-y-1 hover:border-amber-200/80 transition-all duration-500 cursor-pointer flex flex-col h-full relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100/50 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-orange-200/40"></div>
+                    <div className="w-14 h-14 rounded-2xl bg-white border border-[#F4EFE6] shadow-sm flex items-center justify-center text-[#A25035] mb-8 group-hover:scale-110 group-hover:shadow-md transition-all duration-500 relative z-10">
+                        <iconify-icon icon="solar:city-linear" style="stroke-width: 1.5;" className="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 className="text-xl font-semibold tracking-tight text-stone-900 mb-3 relative z-10">Three Story</h3>
+                    <p className="text-sm text-stone-500 font-normal flex-grow mb-8 leading-relaxed relative z-10">Vertical elegance designed for narrow lots, offering panoramic coastal views and rooftop terraces.</p>
+                    <div className="flex items-center text-sm font-medium text-stone-900 group-hover:text-[#A25035] transition-colors relative z-10">
+                        View layouts <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div className="group bg-white/60 backdrop-blur-xl p-8 rounded-[2rem] border border-[#E8DFD1]/80 shadow-sm hover:shadow-xl hover:shadow-[#A25035]/10 hover:-translate-y-1 hover:border-amber-200/80 transition-all duration-500 cursor-pointer flex flex-col h-full relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100/50 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-orange-200/40"></div>
+                    <div className="w-14 h-14 rounded-2xl bg-white border border-[#F4EFE6] shadow-sm flex items-center justify-center text-[#A25035] mb-8 group-hover:scale-110 group-hover:shadow-md transition-all duration-500 relative z-10">
+                        <iconify-icon icon="solar:palmtree-linear" style="stroke-width: 1.5;" className="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 className="text-xl font-semibold tracking-tight text-stone-900 mb-3 relative z-10">Tropical Villas</h3>
+                    <p className="text-sm text-stone-500 font-normal flex-grow mb-8 leading-relaxed relative z-10">Luxury retreats featuring warm timber, terracotta roofs, and resort-style lush amenities.</p>
+                    <div className="flex items-center text-sm font-medium text-stone-900 group-hover:text-[#A25035] transition-colors relative z-10">
+                        View layouts <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Designs -->
+    <section id="trending" className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div className="max-w-xl">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 mb-6">Trending Designs</h2>
+                <p className="text-base text-stone-600 font-normal leading-relaxed">Our most requested architectural plans across all categories this quarter.</p>
+            </div>
+            
+            <div className="flex flex-wrap gap-2 p-1.5 bg-[#E8DFD1]/40 backdrop-blur-md rounded-full border border-[#E8DFD1]/80 self-start md:self-auto">
+                <span className="px-5 py-2 rounded-full bg-white shadow-sm text-stone-900 text-sm font-medium cursor-pointer transition-all">All</span>
+                <span className="px-5 py-2 rounded-full text-stone-600 text-sm font-medium cursor-pointer hover:text-stone-900 transition-all">Single</span>
+                <span className="px-5 py-2 rounded-full text-stone-600 text-sm font-medium cursor-pointer hover:text-stone-900 transition-all">Two Story</span>
+                <span className="px-5 py-2 rounded-full text-stone-600 text-sm font-medium cursor-pointer hover:text-stone-900 transition-all">Villas</span>
+            </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Design Card 1 -->
+            <div className="group cursor-pointer flex flex-col">
+                <div className="relative overflow-hidden rounded-[2rem] mb-6 bg-[#F4EFE6] aspect-[4/3] shadow-sm border border-[#E8DFD1]/80">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="The Horizon" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-5 left-5 px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-xs font-medium text-stone-900 border border-white/40 shadow-[0_4px_12px_rgb(162,80,53,0.05)]">
+                        Single Story
+                    </div>
+                </div>
+                <div className="flex justify-between items-start mb-2 px-2">
+                    <h4 className="text-xl font-semibold tracking-tight text-stone-900 group-hover:text-[#A25035] transition-colors">The Cinnamon Pavilion</h4>
+                    <span className="text-sm font-medium text-stone-600 bg-[#F4EFE6] px-2 py-1 rounded-md">2,400 sqft</span>
+                </div>
+                <p className="text-sm text-stone-500 font-normal flex items-center gap-3 px-2">
+                    <span>3 Beds</span> <span className="w-1 h-1 rounded-full bg-stone-300"></span> <span>2.5 Baths</span>
+                </p>
+            </div>
+
+            <!-- Design Card 2 -->
+            <div className="group cursor-pointer flex flex-col">
+                <div className="relative overflow-hidden rounded-[2rem] mb-6 bg-[#F4EFE6] aspect-[4/3] shadow-sm border border-[#E8DFD1]/80">
+                    <img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Urban Stack" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-5 left-5 px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-xs font-medium text-stone-900 border border-white/40 shadow-[0_4px_12px_rgb(162,80,53,0.05)]">
+                        Two Story
+                    </div>
+                </div>
+                <div className="flex justify-between items-start mb-2 px-2">
+                    <h4 className="text-xl font-semibold tracking-tight text-stone-900 group-hover:text-[#A25035] transition-colors">The Bawa Stack</h4>
+                    <span className="text-sm font-medium text-stone-600 bg-[#F4EFE6] px-2 py-1 rounded-md">3,100 sqft</span>
+                </div>
+                <p className="text-sm text-stone-500 font-normal flex items-center gap-3 px-2">
+                    <span>4 Beds</span> <span className="w-1 h-1 rounded-full bg-stone-300"></span> <span>3 Baths</span>
+                </p>
+            </div>
+
+            <!-- Design Card 3 -->
+            <div className="group cursor-pointer flex flex-col">
+                <div className="relative overflow-hidden rounded-[2rem] mb-6 bg-[#F4EFE6] aspect-[4/3] shadow-sm border border-[#E8DFD1]/80">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Oasis Villa" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-5 left-5 px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-xs font-medium text-stone-900 border border-white/40 shadow-[0_4px_12px_rgb(162,80,53,0.05)]">
+                        Villas &amp; Cabanas
+                    </div>
+                </div>
+                <div className="flex justify-between items-start mb-2 px-2">
+                    <h4 className="text-xl font-semibold tracking-tight text-stone-900 group-hover:text-[#A25035] transition-colors">The Monsoon Retreat</h4>
+                    <span className="text-sm font-medium text-stone-600 bg-[#F4EFE6] px-2 py-1 rounded-md">4,500 sqft</span>
+                </div>
+                <p className="text-sm text-stone-500 font-normal flex items-center gap-3 px-2">
+                    <span>5 Beds</span> <span className="w-1 h-1 rounded-full bg-stone-300"></span> <span>4.5 Baths</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects" className="py-32 px-6 relative border-t border-[#E8DFD1]/50 bg-white/40 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 mb-6">Completed Projects</h2>
+                <p className="text-base text-stone-600 font-normal max-w-2xl mx-auto leading-relaxed">See how our conceptual designs translate into stunning physical realities. Browse our recent constructions blending seamlessly with lush tropical terrain.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+                <!-- Project 1 -->
+                <div className="relative group rounded-[2.5rem] overflow-hidden bg-[#F4EFE6] aspect-[4/5] shadow-lg border border-[#E8DFD1]/80 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18efc2291?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Project 1" className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-1000 ease-out">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C1614]/90 via-[#1C1614]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+                        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-white/90 text-[10px] font-semibold uppercase tracking-widest mb-4 border border-white/10">Three Story • Completed 2023</span>
+                            <h3 className="text-white text-3xl font-semibold tracking-tight mb-3">The Hill-Country Residence</h3>
+                            <p className="text-white/80 text-sm font-normal leading-relaxed max-w-md">A structural marvel built on an incline, maximizing tea-estate views while maintaining a minimal footprint and natural airflow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div className="relative group rounded-[2.5rem] overflow-hidden bg-[#F4EFE6] aspect-[4/5] shadow-lg border border-[#E8DFD1]/80 cursor-pointer md:translate-y-24">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Project 2" className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-1000 ease-out">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C1614]/90 via-[#1C1614]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12">
+                        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-white/90 text-[10px] font-semibold uppercase tracking-widest mb-4 border border-white/10">Single Story • Completed 2024</span>
+                            <h3 className="text-white text-3xl font-semibold tracking-tight mb-3">Courtyard Minimalist</h3>
+                            <p className="text-white/80 text-sm font-normal leading-relaxed max-w-md">Ventilated terracotta walls and lush internal courtyards create a sanctuary that blends seamlessly with the tropical landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div className="mt-24 md:mt-48 text-center">
+                <button className="bg-white/80 backdrop-blur-md text-stone-900 border border-[#E8DFD1]/80 shadow-sm text-sm font-medium px-8 py-4 rounded-full hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center gap-2 group">
+                    View All Projects
+                    <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="text-base group-hover:translate-x-1 transition-transform"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Ideas / Interaction -->
+    <section id="ideas" className="py-32 bg-[#1C1614] text-white px-6 relative overflow-hidden rounded-t-[3rem] mt-12">
+        <!-- Subtle warm dark mode glows -->
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A25035]/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-stone-800/40 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+            <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-medium text-white/80 mb-8 shadow-inner shadow-white/5">
+                    <iconify-icon icon="solar:pen-linear" style="stroke-width: 1.5;" className="text-[#A25035]"></iconify-icon>
+                    <span>Client Idea Board</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter mb-6 leading-tight">Have a vision?<br><span className="text-[#A25035]">Let's draft it.</span></h2>
+                <p className="text-lg text-stone-400 font-normal mb-10 leading-relaxed">
+                    We don't just build our designs; we engineer yours. Share your inspiration, sketches, or mood boards, and our architectural team will conceptualize the possibilities.
+                </p>
+                
+                <form className="space-y-4">
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#A25035]/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+                        <input type="text" placeholder="Project Title (e.g., Tropical Haven)" className="relative w-full bg-stone-900/50 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 text-sm text-white placeholder:text-stone-500 focus:outline-none focus:border-[#A25035]/50 focus:bg-white/5 focus:ring-4 focus:ring-[#A25035]/20 transition-all shadow-inner shadow-black/50">
+                    </div>
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#A25035]/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+                        <textarea rows="3" placeholder="Describe your idea or desired aesthetic..." className="relative w-full bg-stone-900/50 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 text-sm text-white placeholder:text-stone-500 focus:outline-none focus:border-[#A25035]/50 focus:bg-white/5 focus:ring-4 focus:ring-[#A25035]/20 transition-all resize-none shadow-inner shadow-black/50"></textarea>
+                    </div>
+                    <div className="flex items-center gap-3 pt-2">
+                        <button type="button" className="flex items-center justify-center w-14 h-14 rounded-2xl bg-stone-900/50 backdrop-blur-sm border border-white/10 text-stone-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
+                            <iconify-icon icon="solar:paperclip-linear" style="stroke-width: 1.5;" className="text-xl"></iconify-icon>
+                        </button>
+                        <button type="button" className="flex-grow bg-[#A25035] text-white text-sm font-semibold px-8 py-4 rounded-2xl hover:bg-[#8A422B] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgb(162,80,53,0.3)] h-14 flex items-center justify-center gap-2 group">
+                            Submit Idea
+                            <iconify-icon icon="solar:arrow-right-linear" style="stroke-width: 1.5;" className="text-base opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></iconify-icon>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Idea Collage -->
+            <div className="grid grid-cols-2 gap-6 relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1C1614] via-transparent to-transparent z-10 pointer-events-none rounded-3xl"></div>
+                <div className="space-y-6">
+                    <div className="bg-stone-900/80 backdrop-blur-xl rounded-[2rem] p-5 border border-white/5 shadow-2xl hover:border-white/10 transition-colors duration-500">
+                        <div className="w-full aspect-square bg-stone-800 rounded-2xl mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Interior Idea" className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700 hover:scale-105">
+                        </div>
+                        <p className="text-xs text-stone-400 font-normal leading-relaxed">"Looking for warm timber ceilings and an open courtyard layout."</p>
+                        <div className="mt-3 text-[10px] font-semibold text-[#A25035] uppercase tracking-widest flex items-center gap-1.5">
+                            <span className="w-1 h-1 rounded-full bg-[#A25035]"></span> Client Board
+                        </div>
+                    </div>
+                    <div className="bg-stone-900/40 backdrop-blur-md rounded-[2rem] p-5 border border-white/5 border-dashed h-40 flex flex-col justify-center items-center text-center hover:bg-stone-900/60 hover:border-white/20 transition-all duration-300 cursor-pointer group">
+                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="solar:gallery-add-linear" className="text-xl text-stone-400 group-hover:text-white transition-colors"></iconify-icon>
+                        </div>
+                        <span className="text-xs text-stone-500 font-medium group-hover:text-stone-300 transition-colors">Add sketch</span>
+                    </div>
+                </div>
+                <div className="space-y-6 pt-12">
+                    <div className="bg-stone-900/80 backdrop-blur-xl rounded-[2rem] p-5 border border-white/5 shadow-2xl hover:border-white/10 transition-colors duration-500">
+                        <div className="w-full aspect-[4/5] bg-stone-800 rounded-2xl mb-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Exterior Idea" className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-700 hover:scale-105">
+                        </div>
+                        <p className="text-xs text-stone-400 font-normal leading-relaxed">"I love the deep overhanging roofs and natural terracotta materials."</p>
+                        <div className="mt-3 text-[10px] font-semibold text-[#A25035] uppercase tracking-widest flex items-center gap-1.5">
+                            <span className="w-1 h-1 rounded-full bg-[#A25035]"></span> Client Board
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer className="bg-[#1C1614] border-t border-white/5 py-12 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-3">
+                <span className="text-lg font-semibold tracking-tighter text-white uppercase">MHC</span>
+                <span className="w-1 h-1 rounded-full bg-[#A25035]"></span>
+                <span className="text-sm text-stone-500 font-normal">Modern House Construction</span>
+            </div>
+            <div className="flex gap-8 text-sm font-medium text-stone-500">
+                <a href="#" className="hover:text-white transition-colors duration-300">Privacy</a>
+                <a href="#" className="hover:text-white transition-colors duration-300">Terms</a>
+                <a href="#" className="hover:text-white transition-colors duration-300">Contact</a>
+            </div>
+            <p className="text-xs text-stone-600 font-normal">
+                © 2024 MHC. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+</body></html>

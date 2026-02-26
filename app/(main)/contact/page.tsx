@@ -1,12 +1,10 @@
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
 import Image from "next/image";
 
 export default function ContactPage() {
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
-            <Navbar />
+
 
             <section className="pt-32 lg:pt-52 pb-16 md:pb-24 max-w-7xl mx-auto px-6 w-full flex-grow">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-32">
@@ -117,7 +115,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

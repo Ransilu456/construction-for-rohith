@@ -2,8 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BedDouble, Bath, Square, Calendar, MapPin, ArrowLeft, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
+
 import { designsData } from "@/data/designs";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,7 +29,7 @@ export default async function DesignDetail({ params }: { params: Promise<{ slug:
 
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
-            <Navbar />
+
 
             <section className="pt-24 md:pt-32 pb-12 max-w-7xl mx-auto px-6 w-full">
                 <Link href="/designs" className="inline-flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors text-xs md:text-sm font-medium tracking-wide uppercase mb-8 md:mb-12">
@@ -40,7 +39,8 @@ export default async function DesignDetail({ params }: { params: Promise<{ slug:
                 {/* Hero Header */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-16 items-end">
                     <div className="lg:col-span-2">
-                        <span className="text-accent tracking-widest uppercase text-[10px] md:text-xs font-semibold mb-4 block">{design.style}</span>
+                        <span className="text-accent tracking-[0.3em] uppercase text-[10px] md:text-xs font-bold mb-4 block">{design.category.replace('-', ' ')}</span>
+
                         <h1 className="text-3xl md:text-6xl font-heading font-light text-foreground mb-6 leading-tight">{design.title}</h1>
                         <p className="text-foreground/70 text-base md:text-xl font-light leading-relaxed">
                             {design.description}
@@ -151,7 +151,7 @@ export default async function DesignDetail({ params }: { params: Promise<{ slug:
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

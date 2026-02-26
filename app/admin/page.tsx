@@ -1,6 +1,6 @@
 import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
-import StatusBadge from "@/components/ui/StatusBadge";
+import Footer from "@/components/Sections/Footer";
+import StatusBadge from "@/components/Admin/StatusBadge";
 import inquiriesData from "@/data/inquiries.json";
 import { Mail, Phone, Calendar, User, Info, MessageSquare, ChevronRight, Filter, Search } from "lucide-react";
 

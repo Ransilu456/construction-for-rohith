@@ -1,11 +1,9 @@
 import Image from "next/image";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
 
 export default function AboutPage() {
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
-            <Navbar />
+
 
             {/* Hero Section */}
             <section className="relative pt-32 lg:pt-52 pb-16 md:pb-24 max-w-7xl mx-auto px-6 w-full">
@@ -30,7 +28,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Core Values / Philosophy */}
             <section className="py-16 md:py-24 bg-secondary/30 border-y border-border">
                 <div className="max-w-5xl mx-auto px-6 w-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center">
@@ -55,7 +52,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Leadership / The Team */}
+            {/* Team */}
             <section className="py-20 md:py-32 max-w-7xl mx-auto px-6 w-full">
                 <div className="text-center mb-16 md:mb-20 text-foreground">
                     <span className="text-accent tracking-widest uppercase text-xs font-semibold mb-4 block">Leadership</span>
@@ -64,9 +61,9 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
                     {[
-                        { name: "Deshamanya A. Fernando", role: "Founder & Principal Architect", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-                        { name: "S. Wickremasinghe", role: "Head of Structural Engineering", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-                        { name: "K. Rathnayake", role: "Lead Landscape Architect", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
+                        { name: "Rohith's Father", role: "Founder & Principal Architect", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+                        { name: "R. Menuka", role: "Head of Structural Engineering", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+                        { name: "M. Suraj", role: "Lead Landscape Architect", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
                     ].map((person, idx) => (
                         <div key={idx} className="group">
                             <div className="relative aspect-[3/4] mb-8 overflow-hidden rounded-sm border border-border shadow-sm">
@@ -79,7 +76,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

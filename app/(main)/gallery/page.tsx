@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Navbar from "@/components/ui/Navbar";
-import Footer from "@/components/ui/Footer";
+
 import { designsData } from "@/data/designs";
 
 export default function GalleryPage() {
@@ -8,7 +7,7 @@ export default function GalleryPage() {
 
     return (
         <main className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
-            <Navbar />
+
 
             <section className="pt-40 lg:pt-52 pb-24 max-w-[1400px] mx-auto px-6 w-full flex-grow">
                 <div className="text-center max-w-3xl mx-auto mb-20">
@@ -37,7 +36,7 @@ export default function GalleryPage() {
                 </div>
             </section>
 
-            <Footer />
+
         </main>
     );
 }

@@ -30,22 +30,16 @@ export default function Navbar() {
     }, [isMobileMenuOpen]);
 
     const textColor = isScrolled || !isHomePage ? "text-primary" : "text-white";
-    const linkColor = isScrolled || !isHomePage ? "text-primary/70 hover:text-accent" : "text-white/80 hover:text-accent";
     const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
 
     return (
-        <>
-            <nav
-                className={`fixed top-0 w-full z-[100] transition-all duration-700 ${isScrolled || !isHomePage
-                    ? "bg-background/95 backdrop-blur-md shadow-sm"
-                    : "bg-transparent"
-                    }`}
-            >
-                {/* Top Contact Bar - Hidden on scroll or small screens to keep it breathable */}
-                <div className={`hidden md:block border-b transition-all duration-500 overflow-hidden ${isScrolled || !isHomePage
-                    ? "h-0 opacity-0 border-transparent"
-                    : "h-10 opacity-100 border-white/10"
-                    }`}>
+        <header>
+            <nav className={`fixed top-0 w-full z-100 transition-all duration-700  ${isScrolled || !isHomePage ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
+
+                {/* Top Bar */}
+                <div className={`hidden md:block border-b transition-all duration-500 overflow-hidden 
+                ${isScrolled || !isHomePage ? "h-0 opacity-0 border-transparent" : "h-10 opacity-100 border-white/10"}`}>
+
                     <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-medium text-white/70">
                         <div className="flex items-center gap-6">
                             <div className="flex items-center gap-2">
@@ -68,23 +62,25 @@ export default function Navbar() {
 
                 <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${isScrolled || !isHomePage ? "py-4" : "py-8"}`}>
                     <div className="flex justify-between items-center">
+                        {/* Logo */}
                         <Link href="/" className="flex items-center gap-4 group">
                             <div className="flex items-center justify-center font-heading font-medium text-xl tracking-widest text-primary border border-primary/10 bg-white/10 backdrop-blur-sm w-12 h-12 rounded-full transition-all group-hover:scale-110 group-hover:border-primary/30 duration-500">
                                 MHC
                             </div>
                             <div className={`flex flex-col transition-colors duration-300 ${textColor}`}>
-                                <span className="font-heading font-medium text-lg tracking-[0.1em] uppercase">Modern House</span>
+                                <span className="font-heading font-medium text-lg tracking-widest uppercase">Modern House</span>
                                 <span className={`text-[10px] font-medium tracking-[0.3em] uppercase transition-colors ${isScrolled || !isHomePage ? "text-accent" : "text-white/60"}`}>Construction</span>
                             </div>
                         </Link>
 
+                        {/* Nav Links */}
                         <div className="hidden lg:flex items-center gap-10">
                             {[
-                                { name: "Philosophy", href: "/about" },
+                                { name: "About us", href: "/about" },
                                 { name: "Services", href: "/services" },
-                                { name: "Portfolio", href: "/designs" },
+                                { name: "Designs", href: "/designs" },
                                 { name: "Voices", href: "/testimonials" },
-                                { name: "Journal", href: "/gallery" },
+                                { name: "Gallery", href: "/gallery" },
                             ].map((item) => {
                                 const active = isActive(item.href);
                                 return (
@@ -99,21 +95,16 @@ export default function Navbar() {
                                             }`}
                                     >
                                         {/* Label */}
-                                        <span>{item.name}</span>
+                                        <span className="hover:text-xl letter-sp duration-200">{item.name}</span>
 
-                                        {/* Underline bar — CSS group-hover, enters from left, exits right */}
-                                        <span
-                                            className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0
-                                                transition-transform duration-300 ease-out
-                                                group-hover:scale-x-100
-                                                ${active ? "!scale-x-100 bg-accent" : "bg-accent"}`}
-                                        />
+                                        {/* Underline bar */}
+                                        <span className={`absolute -bottom-1 left-0 h-[1.5px] w-full origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 ${active ? "scale-x-100! bg-accent" : "bg-accent"}`} />
 
                                         {/* Active dot */}
                                         {active && (
                                             <motion.span
                                                 layoutId="navActiveDot"
-                                                className="absolute -bottom-[11px] left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-accent"
+                                                className="absolute -bottom-2.75 left-1/2 -translate-x-1/2 w-0.75 h-0.75 rounded-full bg-accent"
                                                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                             />
                                         )}
@@ -121,7 +112,6 @@ export default function Navbar() {
                                 );
                             })}
                         </div>
-
 
                         <div className="hidden lg:flex">
                             <Link
@@ -153,7 +143,7 @@ export default function Navbar() {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="lg:hidden fixed inset-0 z-[110] bg-background"
+                        className="lg:hidden fixed inset-0 z-110 bg-background"
                         aria-hidden={!isMobileMenuOpen}
                     >
                         <div className="flex flex-col h-full bg-background overflow-y-auto">
@@ -254,6 +244,6 @@ export default function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </>
+        </header>
     );
 }
